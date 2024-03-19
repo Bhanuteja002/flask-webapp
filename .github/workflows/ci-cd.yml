@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
         run: docker build -t my-flask-app:latest .
 
       - name: Log in to Docker Hub
-        run: docker login -u bhanutejadev -p dckr_pat_kODZ31_wQ1eJIFnPUtQs4spWMFc
+        run: echo "Awsedrft@456" | docker login -u "bhanutejadev" --password-stdin
 
       - name: Push Docker image
         run: docker push my-flask-app:latest
