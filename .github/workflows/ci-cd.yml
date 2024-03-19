@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: docker build -t my-app:latest .
+
+      - name: Log in to Docker Hub
+        run: echo "Awsedrft@456" | docker login -u "bhanutejadev" --password-stdin
+
+      - name: Push Docker image
+        run: docker push my-app:latest
