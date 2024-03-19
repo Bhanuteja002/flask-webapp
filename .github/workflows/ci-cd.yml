@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: docker build -t my-flask-app:latest .
+        run: docker build -t pythonapp:latest .
 
       - name: Log in to Docker Hub
         run: echo "Awsedrft@456" | docker login -u "bhanutejadev" --password-stdin
 
       - name: Push Docker image
-        run: docker push my-flask-app:latest
+        run: docker push bhanutejadev/pythonapp:latest
