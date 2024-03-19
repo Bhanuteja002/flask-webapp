@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-app-service
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: "3600" # Increase the timeout to 1 hour (3600 seconds)
+spec:
+  selector:
+    app: flask-app
+  ports:
+    - port: 80
+      targetPort: 5001
+  type: LoadBalancer
